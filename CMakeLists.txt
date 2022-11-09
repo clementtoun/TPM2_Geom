@@ -6,11 +6,12 @@ set(CMAKE_CXX_STANDARD 17)
 set(OpenMesh_DIR ${CMAKE_SOURCE_DIR}/libs/OpenMesh/build/install/share/OpenMesh/cmake)
 find_package(OpenMesh REQUIRED)
 
-set(Eigen_DIR ${CMAKE_SOURCE_DIR}/libs/eigen-3.4.0/cmake)
+set(Eigen_DIR ${CMAKE_SOURCE_DIR}/libs/eigen-3.4.0/build/install/share/eigen3/cmake)
 find_package(Eigen3 REQUIRED)
 
 find_package(OpenGL REQUIRED)
 
+set(glfw3_DIR ${CMAKE_SOURCE_DIR}/libs/glfw/build/install/lib/cmake/glfw3)
 find_package(glfw3 REQUIRED)
 
 FILE(GLOB_RECURSE
