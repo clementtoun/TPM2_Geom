@@ -1,3 +1,9 @@
 [submodule "libs/glfw"]
 	path = libs/glfw
 	url = git@github.com:glfw/glfw.git
+[submodule "libs/OpenMesh"]
+	path = libs/OpenMesh
+	url = https://gitlab.vci.rwth-aachen.de:9000/OpenMesh/OpenMesh.git
+[submodule "libs/eigen"]
+	path = libs/eigen
+	url = https://gitlab.com/libeigen/eigen.git
