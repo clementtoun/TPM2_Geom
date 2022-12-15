@@ -1,37 +1,21 @@
 #include "Drawable.h"
 
-void Drawable::translate(const glm::vec3 translation, const int index) {
-    if(index < (int)m_model.size())
-        m_model[index] = glm::translate(m_model[index], translation);
-    else
-        std::cout << "m_model[index] doesn't exist !" << std::endl;
+void Drawable::translate(const glm::vec3 translation) {
+    m_translation = glm::translate(m_translation, translation);
 }
 
-void Drawable::rotate(const float angle, const glm::vec3 axe, const int index) {
-    if(index < (int)m_model.size())
-        m_model[index] = glm::rotate(m_model[index], glm::radians(angle), axe);
-    else
-        std::cout << "m_model[index] doesn't exist !" << std::endl;
+void Drawable::rotate(const float angle, const glm::vec3 axe) {
+    m_rotation = glm::rotate(m_rotation, angle, axe);
 }
 
-void Drawable::scale(const glm::vec3 scale, const int index) {
-    if(index < (int)m_model.size())
-        m_model[index] = glm::scale(m_model[index], scale);
-    else
-        std::cout << "m_model[index] doesn't exist !" << std::endl;
+void Drawable::scale(const glm::vec3 scale) {
+    m_scaling = glm::scale(m_scaling, scale);
 }
 
-void Drawable::setModel(const glm::mat4 &model, const int index) {
-    if(index < (int)m_model.size())
-        m_model[index] = model;
-    else
-        std::cout << "m_model[index] doesn't exist !" << std::endl;
+glm::mat4 Drawable::getModel() const {
+    return m_scaling * m_rotation * m_translation;
 }
 
-Drawable::~Drawable(){
-    m_model.clear();
-}
+Drawable::~Drawable() = default;
 
-void Drawable::add_model(const glm::mat4 &model) {
-    m_model.emplace_back(model);
-}
+

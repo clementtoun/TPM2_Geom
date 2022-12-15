@@ -7,7 +7,9 @@
 
 class Shader {
 public:
-    Shader(std::string vertex_filename, std::string frag_filename);
+    Shader();
+    void attachShader(std::string shader_filename, unsigned int shader_type);
+    void linkProgram();
     bool useShaderProgram();
     void deleteProg();
 
@@ -15,6 +17,7 @@ public:
     void setInt(const std::string &name, int value);
     void setFloat(const std::string &name, float value);
     void setMat4(const std::string &name, glm::mat4 mat);
+    void setVec2(const std::string &name, glm::vec2 value);
     void setVec3(const std::string &name, glm::vec3 value);
     void setVec4(const std::string &name, glm::vec4 value);
 

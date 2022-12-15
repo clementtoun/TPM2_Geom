@@ -1,0 +1,203 @@
+{
+	"inputs" : 
+	[
+		{
+			"path" : "CMakeLists.txt"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-release/CMakeFiles/3.23.2/CMakeSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-release/CMakeFiles/3.23.2/CMakeCCompiler.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-release/CMakeFiles/3.23.2/CMakeCXXCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/CMakeGenericSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/Platform/UnixPaths.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCXXInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"path" : "libs/OpenMesh/build/install/share/OpenMesh/cmake/OpenMeshConfig.cmake"
+		},
+		{
+			"path" : "libs/OpenMesh/build/install/share/OpenMesh/cmake/OpenMeshConfig-release.cmake"
+		},
+		{
+			"path" : "libs/eigen/build/install/share/eigen3/cmake/Eigen3ConfigVersion.cmake"
+		},
+		{
+			"path" : "libs/eigen/build/install/share/eigen3/cmake/Eigen3Config.cmake"
+		},
+		{
+			"path" : "libs/eigen/build/install/share/eigen3/cmake/Eigen3Targets.cmake"
+		},
+		{
+			"path" : "libs/glfw/build/install/lib/cmake/glfw3/glfw3ConfigVersion.cmake"
+		},
+		{
+			"path" : "libs/glfw/build/install/lib/cmake/glfw3/glfw3Config.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/FindThreads.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/CheckLibraryExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/CheckIncludeFile.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/CheckCSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/Internal/CheckSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/clement/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/share/cmake-3.23/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"path" : "libs/glfw/build/install/lib/cmake/glfw3/glfw3Targets.cmake"
+		},
+		{
+			"path" : "libs/glfw/build/install/lib/cmake/glfw3/glfw3Targets-noconfig.cmake"
+		}
+	],
+	"kind" : "cmakeFiles",
+	"paths" : 
+	{
+		"build" : "/home/clement/Documents/CLionProjects/TPM2_Geom/cmake-build-release",
+		"source" : "/home/clement/Documents/CLionProjects/TPM2_Geom"
+	},
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}

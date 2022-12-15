@@ -29,6 +29,6 @@ void laplacianSmoothing(MyMesh *mesh, float alpha){
 
     for (v_it=mesh->vertices_begin(), cog_it=cogs.begin();
          v_it!=v_end; ++v_it, ++cog_it)
-        if ( !mesh->is_boundary( *v_it ) )
-            mesh->set_point( *v_it, (1-alpha) * mesh->point(*v_it) + alpha * (*cog_it) );
+        //if ( !mesh->is_boundary( *v_it ) )
+        mesh->set_point( *v_it, (1-alpha) * mesh->point(*v_it) + alpha * (*cog_it) );
 }

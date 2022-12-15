@@ -25,10 +25,14 @@ protected:
     virtual void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {};
     virtual void mouse_callback(GLFWwindow* window, double xpos, double ypos) {};
     virtual void framebuffer_size_callback(GLFWwindow *window, int width, int height);
+    virtual void cursor_enter_callback(GLFWwindow *window, int enter);
+    virtual void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {};
+    virtual void mouse_button_callback(GLFWwindow* window, int button, int action, int mods) {};
 
     int m_width, m_height;
     float m_deltaTime, m_lastFrame;
     GLFWwindow* m_window;
+    bool m_cursor_in = false;
 };
 
 

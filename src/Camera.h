@@ -16,7 +16,7 @@ enum Camera_Movement {
 
 constexpr float FOV      =  45.0f;
 constexpr float ASPECT     =  16.0f/9.0f;
-constexpr float NEAR      =  0.1f;
+constexpr float NEAR      =  0.01f;
 constexpr float FAR     =  100.0f;
 
 /*------------------------------------------------------------------------------------------------------------------------*/
@@ -32,7 +32,7 @@ public:
 
     virtual ~Camera();
 
-    // Returns the view matrix calculated using Eular Angles and the LookAt Matrix
+    virtual // Returns the view matrix calculated using Eular Angles and the LookAt Matrix
     glm::mat4 viewmatrix() const;
     glm::mat4 projectionmatrix() const;
     float &zoom();
@@ -43,11 +43,11 @@ public:
     void setviewport(glm::vec4 viewport);
 
     // Processes input received from any keyboard-like input system. Accepts input parameter in the form of camera defined ENUM (to abstract it from windowing systems)
-    virtual void processkeyboard(Camera_Movement direction, float deltaTime);
+    virtual void processkeyboard(Camera_Movement direction, float deltaTime) {};
     // Processes input received from a mouse input system.
     virtual void processmouseclick(int button, float xpos, float ypos);
     // Processes input received from a mouse input system. Expects the offset value in both the x and y direction.
-    virtual void processmousemovement(int button, float xpos, float ypos, bool constraint = true);
+    virtual void processmousemovement(int button, float xpos, float ypos) {};
     // Processes input received from a mouse scroll-wheel event. Only requires input on the vertical wheel-axis
     virtual void processmousescroll(float yoffset);
 
@@ -57,19 +57,23 @@ protected:
     float _aspect;
     float _near;
     float _far;
-    glm::mat4 _projection;
+    glm::mat4 _projection{};
 
-    glm::vec3 _position;
-    glm::vec3 _front;
-    glm::vec3 _up;
+    glm::vec3 _position{};
+    glm::vec3 _front{};
+    glm::vec3 _up{};
     float _zoom;
 
-    glm::vec4 _viewport;
+    glm::vec4 _viewport{};
 
     // mouse movement
-    int _mousebutton;
-    float _mousestartx;
-    float _mousestarty;
+    int _mousebutton{};
+    float _mousestartx{};
+    float _mousestarty{};
+
+    // Camera options
+    float _movementspeed{};
+    float _mousesensitivity{};
 };
 
 
@@ -81,7 +85,7 @@ protected:
 // Default camera values
 constexpr float YAW        = -90.0f;
 constexpr float PITCH      =  0.0f;
-constexpr float SPEED      =  30.0f;
+constexpr float SPEED      =  2.0f;
 constexpr float SENSITIVTY =  0.05f;
 constexpr float ZOOM       =  45.0f;
 
@@ -93,31 +97,26 @@ public:
     // Constructor with vectors (default constructor)
     explicit EulerCamera(glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f), float yaw = YAW, float pitch = PITCH, float fov = FOV, float aspect = ASPECT);
 
-    ~EulerCamera();
+    ~EulerCamera() override;
 
     // Processes input received from any keyboard-like input system. Accepts input parameter in the form of camera defined ENUM (to abstract it from windowing systems)
     void processkeyboard(Camera_Movement direction, float deltaTime) override;
 
     // Processes input received from a mouse input system. Expects the offset value in both the x and y direction.
-    void processmousemovement(int button, float xpos, float ypos, bool constrainPitch = true) override;
+    void processmousemovement(int button, float xpos, float ypos) override;
 
+    void processmousescroll(float delta) override;
 
 private:
     // Calculates the front vector from the Camera's (updated) Eular Angles
     void updatecameravectors();
 
-    bool _firstMouse;
-
     // Camera Attributes
-    glm::vec3 _right;
-    glm::vec3 _worldup;
+    glm::vec3 _right{};
+    glm::vec3 _worldup{};
     // Eular Angles
     float _yaw;
     float _pitch;
-    // Camera options
-    float _movementspeed;
-    float _mousesensitivity;
-
 };
 
 
@@ -133,32 +132,24 @@ public:
     // Constructor with vectors (default constructor)
     explicit TrackballCamera(glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f), float yaw = YAW, float pitch = PITCH, float fov = FOV, float aspect = ASPECT);
 
-    ~TrackballCamera();
+    ~TrackballCamera() override;
 
     // Processes input received from any keyboard-like input system. Accepts input parameter in the form of camera defined ENUM (to abstract it from windowing systems)
     void processkeyboard(Camera_Movement direction, float deltaTime) override;
 
-    // Processes input received from a mouse input system.
-    void processmouseclick(int button, float xpos, float ypos) override;
-
     // Processes input received from a mouse input system. Expects the offset value in both the x and y direction.
-    void processmousemovement(int button, float xpos, float ypos, bool constrainPitch = false) override;
-
+    void processmousemovement(int button, float xpos, float ypos) override;
 
 private:
     // Calculates the front vector from the Camera's (updated) Eular Angles
     void updatecameravectors();
 
     // Camera Attributes
-    glm::vec3 _right;
-    glm::vec3 _worldup;
+    glm::vec3 _right{};
+    glm::vec3 _worldup{};
     // Eular Angles
     float _yaw;
     float _pitch;
-    // Camera options
-    float _movementspeed;
-    float _mousesensitivity;
-
 };
 
 #endif // CAMERA_H

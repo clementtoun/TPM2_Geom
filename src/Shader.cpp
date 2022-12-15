@@ -6,49 +6,8 @@
 #include <sstream>
 #include <iostream>
 
-Shader::Shader(std::string vertex_filename, std::string frag_filename) {
-
-    std::string vertex_source = m_loadSourceFromFile(vertex_filename);
-    std::string frag_source = m_loadSourceFromFile(frag_filename);
-
-    unsigned int vertex_id, fragment_id;
-    int success;
-    char infoLog[512];
-
-    const char* tempV = vertex_source.c_str();
-
-    vertex_id = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vertex_id, 1, &tempV, NULL);
-    glCompileShader(vertex_id);
-    glGetShaderiv(vertex_id, GL_COMPILE_STATUS, &success);
-    if (!success) {
-        glGetShaderInfoLog(vertex_id, 512, NULL, infoLog);
-        std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
-        exit(-1);
-    };
-
-    const char* tempF = frag_source.c_str();
-
-    fragment_id = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(fragment_id, 1, &tempF, NULL);
-    glCompileShader(fragment_id);
-
-    glGetShaderiv(fragment_id, GL_COMPILE_STATUS, &success);
-    if(!success)
-    {
-        glGetShaderInfoLog(fragment_id, 512, NULL, infoLog);
-        std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
-        exit(-1);
-    };
-
+Shader::Shader() {
     m_ID = glCreateProgram();
-
-    glAttachShader(m_ID, vertex_id);
-    glAttachShader(m_ID, fragment_id);
-    glLinkProgram(m_ID);
-
-    glDeleteShader(vertex_id);
-    glDeleteShader(fragment_id);
 }
 
 bool Shader::useShaderProgram() {
@@ -90,6 +49,11 @@ void Shader::setMat4(const std::string &name, glm::mat4 value) {
     glUniformMatrix4fv(matLoc, 1, GL_FALSE, glm::value_ptr(value));
 }
 
+void Shader::setVec2(const std::string &name, glm::vec2 value) {
+    int vecLoc = glGetUniformLocation(m_ID, name.c_str());
+    glUniform2fv(vecLoc, 1, glm::value_ptr(value));
+}
+
 void Shader::setVec3(const std::string &name, glm::vec3 value) {
     int vecLoc = glGetUniformLocation(m_ID, name.c_str());
     glUniform3fv(vecLoc, 1, glm::value_ptr(value));
@@ -102,4 +66,52 @@ void Shader::setVec4(const std::string &name, glm::vec4 value) {
 
 void Shader::deleteProg() {
     glDeleteProgram(m_ID);
+}
+
+void Shader::attachShader(std::string shader_filename, unsigned int shader_type) {
+    auto type_str = "";
+
+    switch(shader_type){
+        case GL_VERTEX_SHADER: {
+            type_str = "VERTEX";
+            break;
+        }
+        case GL_GEOMETRY_SHADER: {
+            type_str = "GEOMETRY";
+            break;
+        }
+        case GL_FRAGMENT_SHADER: {
+            type_str = "FRAGMENT";
+            break;
+        }
+        default:{
+            std::cout << "ERROR::SHADER wrong shader type\n" << std::endl;
+            exit(-1);
+        }
+    }
+
+    std::string source = m_loadSourceFromFile(shader_filename);
+
+    unsigned int shader_id;
+    int success;
+    char infoLog[512];
+
+    const char* tempV = source.c_str();
+
+    shader_id = glCreateShader(shader_type);
+    glShaderSource(shader_id, 1, &tempV, NULL);
+    glCompileShader(shader_id);
+    glGetShaderiv(shader_id, GL_COMPILE_STATUS, &success);
+    if (!success) {
+        glGetShaderInfoLog(shader_id, 512, NULL, infoLog);
+        std::cout << "ERROR::SHADER::" << type_str << "::COMPILATION_FAILED\n" << infoLog << std::endl;
+        exit(-1);
+    };
+
+    glAttachShader(m_ID, shader_id);
+    glDeleteShader(shader_id);
+}
+
+void Shader::linkProgram() {
+    glLinkProgram(m_ID);
 }
